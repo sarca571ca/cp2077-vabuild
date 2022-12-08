@@ -40,4 +40,4 @@ want.
 
 ### License
 
-[MIT](https://github.com/sarca571ca/cp2077-vabuild/edit/master/LICENSE.md)
+[MIT](https://github.com/sarca571ca/cp2077-vabuild/blob/master/LICENSE.md)
