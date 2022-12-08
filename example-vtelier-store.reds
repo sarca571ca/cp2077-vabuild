@@ -1,8 +1,8 @@
 @addMethod(gameuiInGameMenuGameController)
 protected cb func RegisterTheDreamShopStore(event: ref<VirtualShopRegistration>) -> Bool {
   event.AddStore(
-    n"last",
-    "test",
+    n"example",
+    "Example Store",
     [
      "Items.unique_item_name01" 
      "Items.unique_item_name02" 
