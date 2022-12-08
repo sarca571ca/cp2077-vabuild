@@ -37,3 +37,7 @@ want.
 - Add ability to change store icons
 - Add ability to read spaces.
 - Output the file directly to the game if you wish
+
+### License
+
+[MIT](https://github.com/sarca571ca/cp2077-vabuild/edit/master/LICENSE.md)
