@@ -1,0 +1,31 @@
+@addMethod(gameuiInGameMenuGameController)
+protected cb func RegisterTheDreamShopStore(event: ref<VirtualShopRegistration>) -> Bool {
+  event.AddStore(
+    n"last",
+    "test",
+    [
+     "Items.unique_item_name01" 
+     "Items.unique_item_name02" 
+     "Items.unique_item_name03" 
+     "Items.unique_item_name04" 
+     "Items.unique_item_name05" 
+     "Items.unique_item_name06" 
+     "Items.unique_item_name07" 
+     "Items.unique_item_name08" 
+     "Items.unique_item_name09" 
+     "Items.unique_item_name10" 
+     "Items.unique_item_name11" 
+     "Items.unique_item_name12" 
+     "Items.unique_item_name13" 
+     "Items.unique_item_name14" 
+     "Items.unique_item_name15" 
+     "Items.unique_item_name16" 
+     "Items.unique_item_name17" 
+     "Items.unique_item_name18"
+    ],
+    [],
+    r"base/gameplay/gui/world/adverts/naranjita/naranjite_atlas.inkatlas",
+    n"CHARACTER",
+    []
+  );
+}
