@@ -25,9 +25,9 @@ func importFile(fileName string) {
 	// Creates an output file for the new format to be called later on.
 	// This can probably done in memory by putting each line into a slice.
 	// Future adjustments: Send directly to a slice.
-	items, errrr := os.Create("items.txt")
-	if errrr != nil {
-		fmt.Printf("Failed to create file: %s", errrr)
+	items, err := os.Create("items.txt")
+	if err != nil {
+		fmt.Printf("Failed to create file: %s", err)
 	}
 
 	defer items.Close()
@@ -50,6 +50,7 @@ func buildStore() {
 	// Creating variables for the data value name cannot have any spaces or special characters
 	// Future adjustments: Beef up the error checks to stop special characters and spaces from
 	// being used.
+	fmt.Print("\nEnter the data name of the store. Cannot contain spaces or special characters.\n")
 	var dsname string
 	_, err := fmt.Scanf("%s\n", &dsname)
 	if err != nil {
@@ -59,18 +60,26 @@ func buildStore() {
 	// Creating variable for the Actual in Game name of the store. This can have spaces and special
 	// characters but currently doesn't support spaces.
 	// Future adjustments: Add in allowances for reading spaces.
-	var asname string
-	_, er := fmt.Scanf("%s\n", &asname)
-	if er != nil {
-		fmt.Println(er)
+	fmt.Print("Enter the in game name of the store.\n")
+	sc3 := bufio.NewScanner(os.Stdin)
+	sc3.Scan()
+	asname := sc3.Text()
+	if asname == "" {
+		fmt.Println("Field cannot be blank.")
+		fmt.Println("Press Enter/Return to retry.")
+		_, w := fmt.Scanln()
+		if w != nil {
+			fmt.Println("Press Enter/Return.")
+		}
+		buildStore()
 	}
 
 	// Creates and names the file that will store the new format. The data name above must match the
 	// first part of the filename "dataname-atelier-store.reds".
 	fname := fmt.Sprintf("%s-atelier-store.reds", dsname)
-	file, errr := os.Create(fname)
-	if errr != nil {
-		fmt.Printf("Failed to create file: %s", errr)
+	file, err := os.Create(fname)
+	if err != nil {
+		fmt.Printf("Failed to create file: %s", err)
 	}
 
 	defer file.Close()
